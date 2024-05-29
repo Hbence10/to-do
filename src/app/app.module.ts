@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { CompletedToDoComponent } from './completed-to-do/completed-to-do.component';
 import { ActiveToDoComponent } from './active-to-do/active-to-do.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,

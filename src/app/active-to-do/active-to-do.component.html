@@ -1,1 +1,5 @@
 <p>active-to-do works!</p>
+<div *ngFor="let exercise of activeToDos">
+    <p>Exercise: {{exercise.name}}</p>
+    <p>Created At: {{exercise.createdAt}}</p>
+</div>

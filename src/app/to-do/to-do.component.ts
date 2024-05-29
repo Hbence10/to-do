@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToDoService } from '../to-do.service';
 import { Exercise } from '../to-do.module';
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
@@ -11,6 +12,8 @@ export class ToDoComponent implements OnInit{
 
   constructor(public service: ToDoService){}
   toDos : Exercise[] = []
+
+
   ngOnInit(): void {
     this.toDos = this.service.toDos
     console.log(this.toDos);
