@@ -1,1 +1,5 @@
-<p>completed-to-do works!</p>
+<div *ngFor="let exercise of completedToDo">
+    <p>Exercise: {{exercise.name}}</p>
+    <p>Created at: {{exercise.createdAt}}</p>
+    <p>Finished at: {{exercise.finishedAt}}</p>
+</div>

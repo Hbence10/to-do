@@ -1,7 +1,11 @@
-
-    <div *ngFor="let exercise of toDos">
-        <p>Exercise: {{exercise.name}}</p>
-        <p>Created at: {{exercise.time}}</p>
-        <button (click)="edit(exercise)">Edit</button>
-    </div>
-    
+<div *ngFor="let exercise of toDos">
+  <div class="{{exercise.classList}}">
+    <p>Exercise: {{ exercise.name }}</p>
+    <p>Created at: {{ exercise.createdAt }}</p>
+    <form>
+      <button (click)="edit(exercise)">Edit</button>
+      <input [(ngModel)]="exercise.name" type="text" placeholder="edit" value="{{exercise.name}}">
+      <input type="radio" (click)="finish(exercise)"/>Finish
+    </form>
+  </div>
+</div>

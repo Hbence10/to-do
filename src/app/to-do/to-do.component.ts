@@ -19,4 +19,10 @@ export class ToDoComponent implements OnInit{
   edit(exercise: Exercise){
     this.service.edit(exercise);
   }
+
+  finish(exercise: Exercise){
+    exercise.finishedAt = new Date()
+    exercise.classList = "finish";
+    this.service.finish(exercise)
+  }
 }
