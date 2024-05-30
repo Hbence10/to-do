@@ -5,18 +5,25 @@ import { Exercise } from './to-do.module';
   providedIn: 'root'
 })
 export class ToDoService implements OnInit{
-  toDos : Exercise[] = []
-  completeToDos : Exercise[] = []
-  activeToDos : Exercise[] = []
+  //toDos: Exercise[] = []
+  //completeToDos : Exercise[] = []
+  //activeToDos : Exercise[] = []
+  toDos: Exercise[] = JSON.parse(localStorage.getItem("toDos") as string)
+  completeToDos : Exercise[] = JSON.parse(localStorage.getItem("completedToDos") as string)
+  activeToDos : Exercise[] = JSON.parse(localStorage.getItem("activeToDos") as string)
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     
   }
 
-  constructor() { }
+  constructor() { 
+    this.startUp()
+  }
 
-  edit(exercise: Exercise){
-    console.log("edit function called")
+  edit(exercise: Exercise, newToDo: string){
+    this.toDos[this.toDos.indexOf(exercise)].name = newToDo;
+    localStorage.setItem("toDos", JSON.stringify(this.toDos))
+    localStorage.setItem("activeToDos", JSON.stringify(this.activeToDos))
   }
 
   finish(exercise: Exercise){
@@ -33,6 +40,20 @@ export class ToDoService implements OnInit{
     this.activeToDos.push(new Exercise(ex, new Date(), false, "normal"))
     localStorage.setItem("toDos", JSON.stringify(this.toDos))
     localStorage.setItem("activeToDos", JSON.stringify(this.activeToDos))
+  }
+
+  startUp(){
+    if(this.toDos == null){
+      this.toDos = []
+    }
+
+    if(this.activeToDos == null){
+      this.activeToDos = []
+    }
+
+    if(this.completeToDos == null){
+      this.completeToDos = []
+    }
   }
 }
  

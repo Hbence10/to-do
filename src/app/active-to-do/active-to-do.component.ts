@@ -15,4 +15,19 @@ export class ActiveToDoComponent  implements OnInit{
   ngOnInit(): void {
     this.activeToDos = this.service.activeToDos
   }
+
+  startEdit(toDo : Exercise){
+    toDo.editButton = true
+  }
+
+  editToDo(exercise:Exercise, newToDo:string){
+    this.service.edit(exercise, newToDo);
+    exercise.editButton = false
+  }
+
+  finish(exercise: Exercise){
+    exercise.finishedAt = new Date()
+    exercise.classList = "finish";
+    this.service.finish(exercise)
+  }
 }

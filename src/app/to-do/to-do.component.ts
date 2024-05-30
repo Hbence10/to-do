@@ -13,14 +13,17 @@ export class ToDoComponent implements OnInit{
   constructor(public service: ToDoService){}
   toDos : Exercise[] = []
 
-
   ngOnInit(): void {
     this.toDos = this.service.toDos
-    console.log(this.toDos);
   }
   
-  edit(exercise: Exercise){
-    this.service.edit(exercise);
+  startEdit(toDo : Exercise){
+    toDo.editButton = true
+  }
+
+  editToDo(exercise:Exercise, newToDo:string){
+    this.service.edit(exercise, newToDo);
+    exercise.editButton = false
   }
 
   finish(exercise: Exercise){

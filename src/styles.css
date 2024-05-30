@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+body{
+    background-image: url(../src/bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+*{
+    color: rgb(255, 195, 84) !important; 
+    font-family: "Poetsen One", sans-serif;
+    /*background-color: rgba(28, 20, 145, 0.466) !important;*/
+}
+
+

@@ -1,0 +1,8 @@
+.normal {
+    height: 175px;
+    color: rgb(255, 195, 84) !important;
+    background-color: rgba(28, 20, 145) !important;
+    border-radius: 20px;
+    border: rgb(255, 195, 84) !important;
+    width: 450px;
+}

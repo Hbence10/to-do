@@ -1,10 +1,12 @@
 <div class="container-fluid" id="listBody">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 mt-5">
+            <div class="d-flex">
+                <p style="margin: 0px ;" class="d-flex justify-content-center align-items-center flex-fill">Add new todo:</p>
+                <input style="width: 320px;" class="form-control flex-fill" type="text" placeholder="To-Do" [(ngModel)]="newToDo">
+                <button class="mx-4 btn btn-outline-warning flex-fill text-white" (click)="addToDo(newToDo)">Send</button>
+            </div>
             <app-to-do></app-to-do>
-            <p>Add new todo:</p>
-            <input type="text" placeholder="To-Do" [(ngModel)]="newToDo">
-            <button (click)="addToDo(newToDo)">Kuldes</button>
         </div>
     </div>
 </div>

@@ -1,11 +1,17 @@
-<div *ngFor="let exercise of toDos">
-  <div class="{{exercise.classList}}">
-    <p>Exercise: {{ exercise.name }}</p>
-    <p>Created at: {{ exercise.createdAt }}</p>
-    <form >
-      <button (click)="edit(exercise)">Edit</button>
-      <input [(ngModel)]="exercise.name" type="text" placeholder="edit" value="{{exercise.name}}">
-      <input type="radio" (click)="finish(exercise)"/>Finish
-    </form>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let exercise of toDos" class="col-lg-12 {{ exercise.classList }} d-flex flex-column my-3">
+        <div class="d-flex align-items-start mt-3">
+          <h1 class="flex-fill">{{ exercise.name | titlecase }}</h1>
+          <i class="fa-solid fa-check" (click)="finish(exercise)"></i>
+        </div>
+        <p><strong>Created at:</strong> {{ exercise.createdAt | date : "yyyy, MM, dd - hh:mm" }}</p>
+        <p *ngIf="exercise.finish"><strong>Finished at:</strong> {{ exercise.finishedAt | date : "yyyy, MM, dd - hh:mm" }}</p>
+        <div class="d-flex align-items-end flex-fill mb-4" *ngIf="exercise.finish == false">
+          <button class="btn btn-outline-dark" (click)="startEdit(exercise)">Edit</button>
+          <input style="width: 100px !important;" *ngIf="exercise.editButton" [(ngModel)]="exercise.name" type="text" placeholder="edit" class="form-control flex-fill mx-4 bg-transparent" />
+          <button *ngIf="exercise.editButton" (click)="editToDo(exercise, exercise.name)"  class="btn btn-outline-dark">Save</button>
+        </div>
+    </div>
   </div>
 </div>

@@ -1,8 +1,16 @@
-.finish{
-    color: white;
-    background-color: rgba(114, 189, 114, 0.747);
+.finish {
+    height: 155px;
+    color: rgb(255, 195, 84) !important;
+    background-color: #0f3b18 !important;
+    border-radius: 20px;
+    border: rgb(255, 195, 84) !important;
+    transition: 0.5s;
 }
 
-.normal{
-    color: black;
+.normal {
+    height: 175px;
+    color: rgb(255, 195, 84) !important;
+    background-color: rgba(28, 20, 145) !important;
+    border-radius: 20px;
+    border: rgb(255, 195, 84) !important;
 }

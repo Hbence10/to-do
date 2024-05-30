@@ -16,5 +16,6 @@ export class ToDoListComponent implements OnInit{
 
   addToDo(ex:string){
     this.service.addToDo(ex)
+    this.newToDo = ""
   }
 }

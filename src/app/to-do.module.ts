@@ -4,7 +4,8 @@ export class Exercise{
         public createdAt: Date,
         public finish : boolean,
         public classList : string,
-        public finishedAt? : Date
+        public finishedAt? : Date,
+        public editButton? : boolean
     ) {}
 
 }

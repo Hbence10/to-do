@@ -1,0 +1,10 @@
+.finish {
+    height: 155px;
+    color: rgb(255, 195, 84) !important;
+    background-color: #0f3b18 !important;
+    border-radius: 20px;
+    border: rgb(255, 195, 84) !important;
+    transition: 0.5s;
+    width: 450px;
+}
+
