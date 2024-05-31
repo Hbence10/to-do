@@ -5,9 +5,6 @@ import { Exercise } from './to-do.module';
   providedIn: 'root'
 })
 export class ToDoService implements OnInit{
-  //toDos: Exercise[] = []
-  //completeToDos : Exercise[] = []
-  //activeToDos : Exercise[] = []
   toDos: Exercise[] = JSON.parse(localStorage.getItem("toDos") as string)
   completeToDos : Exercise[] = JSON.parse(localStorage.getItem("completedToDos") as string)
   activeToDos : Exercise[] = JSON.parse(localStorage.getItem("activeToDos") as string)
@@ -28,8 +25,11 @@ export class ToDoService implements OnInit{
 
   finish(exercise: Exercise){
     exercise.finish = true;
+    
     this.completeToDos.push(exercise)
-    this.activeToDos.splice(this.toDos.indexOf(exercise), 1)
+    this.activeToDos.splice(this.activeToDos.indexOf(exercise), 1)
+      
+
     localStorage.setItem("completedToDos", JSON.stringify(this.completeToDos))
     localStorage.setItem("activeToDos", JSON.stringify(this.activeToDos))
     localStorage.setItem("toDos", JSON.stringify(this.toDos))

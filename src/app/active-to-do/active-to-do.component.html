@@ -1,9 +1,11 @@
-<div  class="container-fluid d-flex flex-fill justify-content-center align-content-center"> 
-    <div *ngFor="let exercise of activeToDos" class="row">
-      <div *ngIf="exercise.finish == false" class="col-lg-12 {{ exercise.classList }} d-flex flex-column m-3" >
+<div class="container-fluid d-flex flex-fill justify-content-center align-content-center"> 
+    <div class="row">
+      <div *ngFor="let exercise of activeToDos" class="col-lg-12 {{ exercise.classList }} d-flex flex-column m-3" >
           <div class="d-flex align-items-start mt-3">
             <h1 class="flex-fill">{{ exercise.name | titlecase }}</h1>
-            <i class="fa-solid fa-check" (click)="finish(exercise)"></i>
+            <div *ngIf="exercise.finish == false">
+              <i  class="fa-solid fa-check" (click)="finish(exercise)"></i>
+            </div>
           </div>
           <p>Created at: {{ exercise.createdAt | date : "yyyy, MM, dd - hh:mm" }}</p>
           <p *ngIf="exercise.finish">Finished at:> {{ exercise.finishedAt | date : "yyyy, MM, dd - hh:mm" }}</p>

@@ -26,8 +26,10 @@ export class ActiveToDoComponent  implements OnInit{
   }
 
   finish(exercise: Exercise){
+    exercise.finish = true
     exercise.finishedAt = new Date()
     exercise.classList = "finish";
+    
     this.service.finish(exercise)
   }
 }
