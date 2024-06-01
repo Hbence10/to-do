@@ -4,7 +4,7 @@
             <div class="d-flex">
                 <h3 style="margin: 0px ;" class="d-flex justify-content-center align-items-center flex-fill">Add new todo:</h3>
                 <input style="width: 320px;" class="form-control flex-fill" type="text" placeholder="To-Do" [(ngModel)]="newToDo">
-                <button class="mx-4 btn btn-outline-warning flex-fill text-white" (click)="addToDo(newToDo)">Send</button>
+                <button class="mx-4 btn btn-outline-warning flex-fill text-white" (click)="addToDo(newToDo)" [disabled]="newToDo.trim().length == 0">Send</button>
             </div>
             <app-to-do></app-to-do>
         </div>
