@@ -28,9 +28,6 @@ export class ToDoService implements OnInit{
     
     this.completeToDos.push(exercise)
     this.activeToDos.splice(this.activeToDos.indexOf(exercise), 1)
-    //this.toDos[this.toDos.indexOf(exercise)].finish = true
-
-    console.log(this.toDos.indexOf(exercise))
 
     this.toDos[this.toDos.indexOf(exercise)].finish = true
     localStorage.setItem("completedToDos", JSON.stringify(this.completeToDos))
@@ -39,7 +36,7 @@ export class ToDoService implements OnInit{
   }
 
   addToDo(ex:string){
-    this.newExercise = new Exercise(ex, new Date(), false, "normal")
+    this.newExercise = new Exercise(ex, new Date())
     this.toDos.push(this.newExercise)
     this.activeToDos.push(this.newExercise)
     localStorage.setItem("toDos", JSON.stringify(this.toDos))
