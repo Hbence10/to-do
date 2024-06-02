@@ -6,9 +6,10 @@ import { CompletedToDoComponent } from './completed-to-do/completed-to-do.compon
 
 const routes: Routes = [
   {path: "active-to-do", component:ActiveToDoComponent},
-{path: "", component:ToDoListComponent},
-{path: "to-do-list", component: ToDoListComponent},
-{path: "completed-to-do", component: CompletedToDoComponent}];
+  {path: "", component:ToDoListComponent},
+  {path: "to-do-list", component: ToDoListComponent},
+  {path: "completed-to-do", component: CompletedToDoComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
