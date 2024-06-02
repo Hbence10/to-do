@@ -21,13 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    RouterModule.forRoot([
-      {path: "active-to-do", component:ActiveToDoComponent},
-      {path: "", component:ToDoListComponent},
-      {path: "to-do-list", component: ToDoListComponent},
-      {path: "completed-to-do", component: CompletedToDoComponent}
-    ])
+    FormsModule
   ],
   providers: [
     provideClientHydration()
